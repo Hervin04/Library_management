@@ -5,4 +5,13 @@ root=tk.Tk()
 root.title("MINI IT")
 root.geometry("600x400")
 root.configure(bg="#34495e")
+
+heading_label=tk.Label(
+    root,
+    text="SHDL MMU LIBRARY",
+    bg="#34495e",
+    fg="white",
+    font=("Arial", 24)
+)
+heading_label.pack(pady=20)
 root.mainloop()
