@@ -68,14 +68,32 @@ def register_student():
 
 
 def login_student():
-    top=tk.Toplevel(root)
-    top.title("Login Student")
-    top.geometry("300x200")
+    login_window=tk.Toplevel(root)
+    login_window.title("Login Student")
+    login_window.geometry("300x200")
+    login_window.configure(bg="#34495e")
 
+    tk.Label(
+        login_window,
+        text="Student Login",
+         bg="#34495e",
+        fg="white",
+        font=("Arial", 18)
+    ).pack(pady=5)
+    
 def login_admin():
-    top=tk.Toplevel(root)
-    top.title("Login Admin")
-    top.geometry("300x200")
+    admin_window=tk.Toplevel(root)
+    admin_window.title("Login Admin")
+    admin_window.geometry("300x200")
+    admin_window.configure(bg="#34495e")
+
+    tk.Label(
+        admin_window,
+        text="Admin Login",
+         bg="#34495e",
+        fg="white",
+        font=("Arial", 18)
+    ).pack(pady=5)
 
 def search_book():
     top=tk.Toplevel(root)
