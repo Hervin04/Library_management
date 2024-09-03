@@ -1,2 +1,8 @@
-mainmenu here
-add features
+import tkinter as tk
+from tkinter import messagebox
+
+root=tk.Tk()
+root.title("MINI IT")
+root.geometry("600x400")
+root.configure(bg="#34495e")
+root.mainloop()
