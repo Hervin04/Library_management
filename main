@@ -1,6 +1,41 @@
 import tkinter as tk
 from tkinter import messagebox
 
+def register_student():
+    top=tk.Toplevel(root)
+    top.title("Register Student")
+    top.geometry("300x200")
+
+def login_student():
+    top=tk.Toplevel(root)
+    top.title("Login Student")
+    top.geometry("300x200")
+
+def login_admin():
+    top=tk.Toplevel(root)
+    top.title("Login Admin")
+    top.geometry("300x200")
+
+def search_book():
+    top=tk.Toplevel(root)
+    top.title("Search book")
+    top.geometry("300x200")
+
+def return_book():
+    top=tk.Toplevel(root)
+    top.title("Return Book")
+    top.geometry("300x200")
+
+def search_for_contact():
+    top=tk.Toplevel(root)
+    top.title("Contact")
+    top.geometry("300x200")
+
+def search_info():
+    top=tk.Toplevel(root)
+    top.title("Info MMU")
+    top.geometry("300x200")
+    
 root=tk.Tk()
 root.title("MINI IT")
 root.geometry("600x400")
