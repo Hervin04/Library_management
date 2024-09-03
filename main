@@ -14,4 +14,20 @@ heading_label=tk.Label(
     font=("Arial", 24)
 )
 heading_label.pack(pady=20)
+
+#menu
+menu_bar=tk.Menu(root)
+
+#register menu
+register_menu=tk.Menu(menu_bar, tearoff=0)
+register_menu.add_command(label="New Member", command=register_member)
+menu_bar.add_cascade(label="Register", menu=register_menu)
+
+#book
+manage_book_menu=tk.Menu(menu_bar, tearoff=0)
+manage_book_menu.add_command(label="Search Book", command=search_book)
+manage_book_menu.add_command(label="Return Book", command=return_book)
+menu_bar.add_cascade(label="Manage Books", menu=manage_book_menu)
+
+root.config(menu=menu_bar)
 root.mainloop()
