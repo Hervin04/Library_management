@@ -79,21 +79,73 @@ def login_student():
          bg="#34495e",
         fg="white",
         font=("Arial", 18)
-    ).pack(pady=5)
-    
-def login_admin():
-    admin_window=tk.Toplevel(root)
-    admin_window.title("Login Admin")
-    admin_window.geometry("300x200")
-    admin_window.configure(bg="#34495e")
+    ).pack(pady=10)
 
     tk.Label(
-        admin_window,
-        text="Admin Login",
-         bg="#34495e",
+        login_window,
+            text="Student ID",
+            bg="#34495e",
+            fg="white",
+            font=("Arial", 18)
+    ).pack(pady=10)
+    id_entry =tk.Entry(login_window)
+    id_entry.pack(pady=5)
+
+    tk.Label(
+            login_window,
+            text="Password",
+            bg="#34495e",
+            fg="white",
+            font=("Arial", 18)
+    ).pack(pady=5)
+    password_entry =tk.Entry(login_window)
+    password_entry.pack(pady=5)
+ 
+    tk.Button(
+        login_window,
+        text="LOGIN",
+        bg="#2ecc71",
+        fg="white",
+        font=("Arial", 14, "bold")
+    ).pack(pady=20)
+
+def login_admin():
+    login_window=tk.Toplevel(root)
+    login_window.title("Login Admin")
+    login_window.geometry("300x200")
+    login_window.configure(bg="#34495e")
+
+    tk.Label(
+        login_window,
+        text="Admin ID",
+        bg="#34495e",
         fg="white",
         font=("Arial", 18)
     ).pack(pady=5)
+
+    id_entry=tk.Entry(login_window)
+    id_entry.pack(pady=5)
+        
+
+    tk.Label(
+            login_window,
+            text="Password",
+            bg="#34495e",
+            fg="white",
+            font=("Arial", 18)
+    ).pack(pady=5)
+    password_entry =tk.Entry(login_window)
+    password_entry.pack(pady=5)
+ 
+
+    tk.Button(
+        login_window,
+        text="LOGIN",
+        bg="#2ecc71",
+        fg="white",
+        font=("Arial", 14, "bold")
+    ).pack(pady=20)
+
 
 def search_book():
     top=tk.Toplevel(root)
