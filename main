@@ -283,10 +283,6 @@ def search_for_contact():
         )
     contact_text.pack(pady=10)
 
-def search_info():
-    top=tk.Toplevel(root)
-    top.title("Info MMU")
-    top.geometry("300x200")
 
 root=tk.Tk()
 root.title("MINI IT")
@@ -326,10 +322,7 @@ contact_menu=tk.Menu(menu_bar, tearoff=0)
 contact_menu.add_command(label="Contact Information", command=search_for_contact)
 menu_bar.add_cascade(label="Contact", menu=contact_menu)
 
-#help menu
-help_menu=tk.Menu(menu_bar, tearoff=0)
-help_menu.add_command(label="About", command=search_info)
-menu_bar.add_cascade(label="Help", menu=help_menu)
+
 
 root.config(menu=menu_bar)
 root.mainloop()
