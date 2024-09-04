@@ -214,14 +214,74 @@ def search_book_details(query, window):
 
 
 def return_book():
-    top=tk.Toplevel(root)
-    top.title("Return Book")
-    top.geometry("300x200")
+    return_window=tk.Toplevel(root)
+    return_window.title("Return Book")
+    return_window.geometry("")
+    return_window.configure(bg="#34495e")
+
+    tk.Label(
+        return_window,
+        text="Return Book",
+         bg="#34495e",
+        fg="white",
+        font=("Arial", 18)
+    ).pack(pady=10)
+
+    return_label = tk.Label(return_window, text="Enter details to return a book", bg="#34495e", fg="white", font=("Arial", 14))
+    return_label.pack(pady=10)
+
+    # Book title entry
+    title_label = tk.Label(return_window, text="Book Title:", bg="#34495e", fg="white", font=("Arial", 12))
+    title_label.pack(pady=5)
+    title_entry = tk.Entry(return_window)
+    title_entry.pack(pady=5)
+
+    # ISBN entry
+    isbn_label = tk.Label(return_window, text="ISBN (Optional):", bg="#34495e", fg="white", font=("Arial", 12))
+    isbn_label.pack(pady=5)
+    isbn_entry = tk.Entry(return_window)
+    isbn_entry.pack(pady=5)
+
+    # Student ID entry
+    student_id_label = tk.Label(return_window, text="Student ID:", bg="#34495e", fg="white", font=("Arial", 12))
+    student_id_label.pack(pady=5)
+    student_id_entry = tk.Entry(return_window)
+    student_id_entry.pack(pady=5)
+
+    # Return button
+    return_button = tk.Button(return_window, text="Return Book", command=lambda:  (title_entry.get(), isbn_entry.get(), student_id_entry.get(), return_window))
+    return_button.pack(pady=10)
+
+    # Back button
+    back_button = tk.Button(return_window, text="Back", command=return_window.destroy)
+    back_button.pack(pady=10)
 
 def search_for_contact():
-    top=tk.Toplevel(root)
-    top.title("Contact")
-    top.geometry("300x200")
+    contact_window=tk.Toplevel(root)
+    contact_window.title("Contact Information")
+    contact_window.geometry("450x450")
+    contact_window.configure(bg="#34495e")
+
+    tk.Label(
+        contact_window,
+        text="Contact MMU",
+         bg="#34495e",
+        fg="white",
+        font=("Arial", 18)
+    ).pack(pady=20)
+
+    contact_text=tk.Label(
+        contact_window,
+        text=(
+            "For inquires,please contact us at: \n"
+            "Phone: +603-5417 3004\n"
+            "Email: library@mmu.edu.my \n "
+            "Website:www/librarymmu.edu.my"
+        ),bg="#34495e",
+        fg="white",
+        font=("Arial", 18)
+        )
+    contact_text.pack(pady=10)
 
 def search_info():
     top=tk.Toplevel(root)
