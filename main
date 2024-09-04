@@ -3,7 +3,7 @@ from tkinter import messagebox
 
 
 def register_student():
-    register_window=tk.Toplevel(root)
+    register_window =tk.Toplevel(root)
     register_window.title("Register Student")
     register_window.geometry("510x510")
     register_window.configure(bg="#34495e")
@@ -14,7 +14,7 @@ def register_student():
         bg="#34495e",
         fg="white",
         font=("Arial", 20)
-    ).pack(pady=20)
+     ) .pack (pady= 20)
 
     tk.Label(
         register_window,
