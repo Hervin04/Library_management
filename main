@@ -147,10 +147,71 @@ def login_admin():
     ).pack(pady=20)
 
 
-def search_book():
-    top=tk.Toplevel(root)
-    top.title("Search book")
-    top.geometry("300x200")
+def search_for_book():
+    search_window=tk.Toplevel(root)
+    search_window.title("Search Books")
+    search_window.geometry("510x510")
+    search_window.configure(bg="#34495e")
+
+
+def search_for_book():
+
+    search_window = tk.Toplevel(root)
+    search_window.title("Search Book")
+    search_window.geometry("600x400")
+    search_window.configure(bg="#34495e")
+
+    # Search label
+    search_label = tk.Label(search_window, text="Enter book title to search:", bg="#34495e", fg="white", font=("Arial", 20))
+    search_label.pack(pady=10)
+
+    # Search entry
+    search_entry = tk.Entry(search_window, width=50)
+    search_entry.pack(pady=5)
+
+    # Search button
+    search_button = tk.Button(search_window, text="Search", command=lambda: search_book_details(search_entry.get(), search_window))
+    search_button.pack(pady=10)
+
+    # Result display
+    result_text = tk.Text(search_window, height=15, width=80, bg="#34495e", fg="white", font=("Arial", 18))
+    result_text.pack(pady=10)
+
+    # Back button with adjusted size
+    back_button = tk.Button(search_window, text="Back", command=search_window.destroy, width=10, height=2)
+    back_button.pack(pady=10)
+
+def search_book_details(query, window):
+    
+    books = {
+        "C": ["ISBN 123456", "C Programming", "Dennis Ritchie", "10"],
+        "Java": ["ISBN 334455", "Java Programming", "James Gosling", "12"],
+        "Python": ["ISBN 445566", "Python Programming", "Guido van Rossum", "Available"],
+        "PHP": ["ISBN 556677", "PHP Programming", "Rasmus Lerdorf", "1"],
+        "Mysql": ["ISBN 778899", "MySQL Database", "Michael Monty Widenius", "Available"],
+        "Operating System": ["ISBN 990011", "Operating System Concepts", "Abraham Silberschatz", "2"]
+    }
+
+    # Find the Text widget
+    result_text = [widget for widget in window.winfo_children() if isinstance(widget, tk.Text)][0]
+
+    result_text.delete('1.0', tk.END)  # Clear previous results
+
+    if query:
+        query = query.lower()
+        matching_books = [title for title in books if query in title.lower()]
+        
+        if matching_books:
+            result_text.insert(tk.END, "\n\n".join([f"Title: {book}\n"
+                                    f"ISBN: {books[book][0]}\n"
+                                    f"Author: {books[book][2]}\n"
+                                    f"Days in Loan: {books[book][3]}\n"  # Updated index to match with books data
+                                    for book in matching_books]))
+        else:
+            result_text.insert(tk.END, "No books found matching your search criteria.")
+    else:
+        result_text.insert(tk.END, "Please enter a book title to search.")
+
 
 def return_book():
     top=tk.Toplevel(root)
@@ -196,7 +257,7 @@ login_menu.add_command(label="Admin Login", command=login_admin)
 menu_bar.add_cascade(label="Login", menu=login_menu)
 #book
 manage_book_menu=tk.Menu(menu_bar, tearoff=0)
-manage_book_menu.add_command(label="Search Book", command=search_book)
+manage_book_menu.add_command(label="Search Book", command=search_for_book)
 manage_book_menu.add_command(label="Return Book", command=return_book)
 menu_bar.add_cascade(label="Manage Books", menu=manage_book_menu)
 
